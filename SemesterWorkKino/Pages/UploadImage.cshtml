@@ -1,0 +1,23 @@
+@page
+@model SemesterWorkKino.Pages.Test
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<div>
+    <h3>Выберите файл для загрузки</h3>
+    <form method="post" enctype="multipart/form-data" asp-page-handler="UploadImage">
+        <input type="file" name="uploadedFile" /><br>
+        <input type="submit" value="Загрузить" />
+    </form>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

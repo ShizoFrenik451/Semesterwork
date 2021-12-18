@@ -1,0 +1,40 @@
+@page
+@model SemesterWorkKino.Pages.Registration
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/registration_page.css"/>
+    <title></title>
+</head>
+<body>
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script><!--подключение jquery-->
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+        
+        function postData(){
+            $.ajax({
+                type: "POST",
+                url: "/registration?handler=AddUser",
+                headers: {
+                    "XSRF-TOKEN": $('input:hidden[name="__RequestVerificationToken"]').val()
+                },
+                data: $('#registration-form').serialize(),
+                success: function() {
+                    window.location.replace("/index");
+                }
+            });
+        }
+</script>
+</body>
+</html>

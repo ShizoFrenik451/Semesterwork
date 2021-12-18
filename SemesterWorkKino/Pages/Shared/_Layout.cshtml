@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Http
+@using System.Security.Claims
+@using System.IdentityModel.Tokens.Jwt
+<html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="~/css/Main_Page_StyleSheet.css">
+</head>
+<body>  
+  <footer class="footer">
+   <div style="display:flex; justify-content:center">
+    <div style="max-width:1150px">
+        <h4 align="left">ОНЛАЙН-КИНОТЕАТР ПЕРВОГО КАНАЛА</h4>
+        <p style="display: flex; align-content: flex-end; justify-content: flex-end ">
+            Кино1ТВ – это онлайн-кинотеатр «Первого канала», предлагающий телезрителям легальный доступ
+            к просмотру тысячи российских и зарубежных сериалов
+            и фильмов на любом устройстве, в HD качестве,
+            без рекламы... и даже без Интернета –
+            если кино предварительно загрузить
+            в мобильном приложении.
+        </p>
+    </div>
+    </div>
+  </footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  
+</script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,40 @@
+@page
+@model SemesterWorkKino.Pages.Handler
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h1>Handler page</h1>
+
+<div>
+    @Html.AntiForgeryToken()
+    <input type="text" placeholder="login" value="login"/>
+    <input type="text" placeholder="password" value="password"/>
+    <input type="button" value="send" onclick="postData()"/>
+</div>
+
+
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script>
+    function postData(){
+        $.ajax({
+            type: "POST",
+            url: "/handler?handler=Add",
+            beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: '{login: "test", password: "test"}',
+            success: function() {
+                alert("test")
+            }
+        });
+    }
+</script>
+</body>
+</html>
